@@ -1,10 +1,10 @@
-#SafeStructs.Net - Memory Obfuscation for .NET
+##SafeStructs.Net - Memory Obfuscation for .NET
 SafeStructs is a .NET  is a part of my personal library used in various projects. It is designed to store values in memory with obfuscation to make it harder for memory scanners and similar tools to access and modify the data.
 
 ##Important Notes
-- **Obfuscation Key: The obfuscation key is used to scramble the byte array. While this method makes it more difficult to access values, it is not 100% secure.
+- Obfuscation Key: The obfuscation key is used to scramble the byte array. While this method makes it more difficult to access values, it is not 100% secure.
   
-- **Performance Considerations: Due to the additional obfuscation layer, there will be performance overhead compared to normal value types.
+- Performance Considerations: Due to the additional obfuscation layer, there will be performance overhead compared to normal value types.
 The SafeStruct implementation consumes more memory and can be less efficient compared to direct value types due to additional processing and obfuscation. While direct value types can still be easily accessed and altered by tools like Cheat Engine or similar software, SafeStruct provides a more robust protection mechanism to prevent such easy modifications. It is recommended to use this approach only for critical variables within your project.
 
 ## Features
