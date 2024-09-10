@@ -1,7 +1,7 @@
 #SafeStructs.Net - Memory Obfuscation for .NET
-SafeStructs is a .NET package designed to securely and easliy handle and obfuscate values in memory by converting them into byte arrays and applying obfuscation. This approach helps prevent unauthorized tools from easily accessing and modifying these values.
+SafeStructs is a .NET  is a part of my personal library used in various projects. It is designed to store values in memory with obfuscation to make it harder for memory scanners and similar tools to access and modify the data.
 
-###Important Notes
+##Important Notes
 - **Obfuscation Key: The obfuscation key is used to scramble the byte array. While this method makes it more difficult to access values, it is not 100% secure.
   
 - **Performance Considerations: Due to the additional obfuscation layer, there will be performance overhead compared to normal value types.
@@ -23,26 +23,21 @@ You can add SafeStructs to your project manually by copying the source code or b
 Here’s a quick example of how to use SafeStructs:
 
 ```csharp
-using SafeStructs;
+using Oxygen.Structs.NonEncrypted;
 
-class Program
+static void Main()
 {
-    static void Main()
-    {
-        // Create a Safe<int> instance with an initial value
-        Safe<int> safeValue = 51231123;
+    // Create a Safe<int> instance with an initial value
+    Safe<int> _int = 51231123;  // Initialize a Safe<int> with an integer value
+    Safe<float> _float = 3.14f; // Initialize a Safe<float> with a float value
+    Safe<bool> _bool = true;    // Initialize a Safe<bool> with a boolean value
 
-        // Retrieve the value from Safe<int>
-        int a = safeValue;
-        int b = safeValue;
-
-        // Check if values are equal
-        if (a == safeValue)
-        {
-            Console.WriteLine("Values match!");
-        }
-
-        // Print the value
-        Console.WriteLine($"The stored value is: {safeValue}");
-    }
+    // Retrieve the value from Safe<int>
+    int a = _int; // Directly retrieve the integer value from Safe<int>
+    float b = _float; // Directly retrieve the float value from Safe<float>
+    bool c = _bool; // Directly retrieve the boolean value from Safe<bool>
+    
+    // Note: The usage of Safe<T> is similar to using normal variables.
+    // You can directly assign Safe<T> instances to variables of type T,
+    // and you can use them as if they were regular values.
 }
