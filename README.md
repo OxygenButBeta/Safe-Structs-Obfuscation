@@ -16,7 +16,7 @@ The SafeStruct implementation consumes more memory and can be less efficient com
 ## Installation
 
 You can add SafeStructs to your project manually by copying the source code or by including the dll in your project directly.
-- **Dll**: ([https://github.com/kullaniciadi/repositoryadi/blob/main/src/SafeStruct.cs#L10-L20](https://github.com/OxygenButBeta/Safe-Structs-Obfuscation/blob/main/Build_SafeStructs.Net.dll)).
+- **Dll**: [You can click here to go to the dll]([https://github.com/kullaniciadi/repositoryadi/blob/main/src/SafeStruct.cs#L10-L20](https://github.com/OxygenButBeta/Safe-Structs-Obfuscation/blob/main/Build_SafeStructs.Net.dll)).
 
 ## Usage
 
