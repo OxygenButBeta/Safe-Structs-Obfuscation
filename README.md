@@ -41,7 +41,7 @@ static void Main()
     // You can directly assign Safe<T> instances to variables of type T,
     // and you can use them as if they were regular values.
 }
-```csharp
+```
 
 ```csharp
     // Let's assume this function returns a Vector3 that is important for your application
