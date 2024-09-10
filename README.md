@@ -42,7 +42,7 @@ static void Main()
     // and you can use them as if they were regular values.
 }
 ```
-
+## Unity Example
 ```csharp
     // Let's assume this function returns a Vector3 that is important for your application
     Server.GetImportantVector3();
