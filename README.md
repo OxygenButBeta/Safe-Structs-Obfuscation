@@ -41,3 +41,28 @@ static void Main()
     // You can directly assign Safe<T> instances to variables of type T,
     // and you can use them as if they were regular values.
 }
+```csharp
+
+```csharp
+    // Let's assume this function returns a Vector3 that is important for your application
+    Server.GetImportantVector3();
+
+    // You need to store it to perform some calculations on it
+    // If you use Vector3 directly, anyone can easily detect the value 
+    // by using Cheat Engine or any other memory editor. They can locate 
+    // the memory address, change the value, and send it to the server to cheat.
+    Vector3 ImportantVector = Server.GetImportantVector3();
+
+    // But if you use Safe<Vector3> instead of Vector3, the data will be stored securely,
+    // making it much harder for cheaters to find and manipulate the memory address.
+    Safe<Vector3> ImportantSafeVector = Server.GetImportantVector3();
+
+    // Re-assigning the value
+    ImportantSafeVector = Server.GetImportantVector3();
+
+    // Perform calculations on the vector
+    ImportantSafeVector = ImportantSafeVector + Vector3.one;
+
+    // Then send it back to the server
+    Server.SendImportantVector3(ImportantSafeVector);
+
