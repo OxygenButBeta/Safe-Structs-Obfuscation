@@ -13,18 +13,21 @@ namespace Oxygen.Structs.NonEncrypted
         // Properties 
         public T Value
         {
-            get => ValueAsArray is null ? (T)default : o2Serializer.ByteArrayToObject<T>(o2Serializer.Obfuscate(ValueAsArray, key));
-            set => this = new Safe<T>(value);
+            get => o2Serializer.ByteArrayToObject<T>(o2Serializer.Obfuscate(ValueAsArray, key));
+            set => ValueAsArray = ConvertToArray(value);
         }
-        private readonly byte[] ValueAsArray;
+        private byte[] ValueAsArray;
         private const int key = 1726185659;//(XOR key do not forget to change)
 
         // Constructor
-        public Safe(T inputValue) => ValueAsArray = o2Serializer.Obfuscate(o2Serializer.ObjectToByteArray(inputValue), key);
+        public Safe(T inputValue) => ValueAsArray = ConvertToArray(inputValue);
 
         // Implicit conversions
         public static implicit operator Safe<T>(T inputValue) => new Safe<T>(inputValue);
         public static implicit operator T(Safe<T> safeValue) => safeValue.Value;
+
+        // Methods
+        internal static byte[] ConvertToArray(T Value) => o2Serializer.Obfuscate(o2Serializer.ObjectToByteArray(Value), key);
 
         // equality checks
         public static bool operator ==(Safe<T> a, T b)

@@ -8,6 +8,11 @@ namespace Oxygen
         {
             // No null check needed because T is a struct
 
+            ReadOnlySafe<int> inr = 0;
+            inr = 0;
+
+
+
             // Get the size of the object and allocate memory
             var size = Marshal.SizeOf(obj);
             var arr = new byte[size];
